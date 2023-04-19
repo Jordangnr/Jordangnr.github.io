@@ -1,93 +1,267 @@
-<!DOCTYPE html>
-<html lang="fr">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Balises meta pour le référencement -->
-    <meta name="title" content="Portfolio de Jordan GINER">
-    <meta name="description" content="Découvrez le portfolio de Jordan GINER, un consultant en innovation, combinant business, design et ingénierie mécanique pour développer des stratégies de marques et d'innovations impactantes.">
-    <meta name="keywords" content="portfolio, innovation, design, ingénierie, business, IA, blockchain, data">
-    <!-- Balise meta pour la sécurité -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fonts.googleapis.com; style-src 'self' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com;">
-    <title>Portfolio de Jordan GINER</title>
-    <!-- Importation de la police Poppins depuis Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
-    <!-- Importation du fichier style.css avec un numéro de version pour éviter le cache -->
-    <link rel="stylesheet" href="style.css?v=2023-04-19">
-</head>
+/* Définition des variables */
+:root {
+    --main-color: #000000;
+    --accent-color: #99c98c;
+    --background-color: #f7f7f7;
+    --max-width: 131rem;
+  }
+  
+  /* Font styles */
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+  
+  body {
+    font-family: 'Helvetica Neue', sans-serif;
+    margin: 0;
+  }
+  
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    max-width: var(--max-width);
+    /* Correction du débordement du titre */
+    overflow-wrap: break-word;
+    /* Suppression de l'effet de zoom parallaxe sur le titre */
+    /* transform: scale(1.2);
+    transition: transform .5s ease-in-out; */
+  }
 
-<body>
-    <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo de Jordan GINER">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="about">
-            <div class="container">
-                <h1>Jordan GINER</h1>
-                <h2>Designer Innovation, Stratégie | Ingénieur Mécanique, Ergonomie & Design Industriel</h2>
-                <p>Bonjour, je m'appelle Jordan GINER et je suis un consultant en innovation, combinant business, design et ingénierie mécanique pour développer des stratégies de marques et d'innovations impactantes basées sur une vision claire des enjeux de terrain. Passionné par le monde digital, j'explore et développe des projets innovants dans les domaines de l'IA, la blockchain (DeFi) et la data.</p>
-                <!-- Ajout d'un attribut download pour faciliter le téléchargement du CV -->
-                <a href="cv.pdf" class="button" download>Télécharger mon CV</a>
-            </div>
-        </section>
-        <section id="projects">
-            <div class="container">
-                <h2>Projets</h2>
-                <!-- Ajout de microdonnées schema.org pour enrichir les pages -->
-                <div class="grid-container" itemscope itemtype="https://schema.org/ItemList">
-                    <!-- Ajout d'un attribut itemprop pour chaque projet -->
-                    <article class="project" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
-                        <!-- Ajout d'un attribut itemprop pour le titre et l'image du projet -->
-                        <a href="#"><img src="project1.jpg" alt="Project 1" itemprop="image"></a>
-                        <h3 itemprop="name">Project 1</h3>
-                        <!-- Ajout d'un attribut itemprop pour la description du projet -->
-                        <p itemprop="description">Description du projet 1</p>
-                    </article>
-                    <article class="project" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
-                        <a href="#"><img src="project2.jpg" alt="Project 2" itemprop="image"></a>
-                        <h3 itemprop="name">Project 2</h3>
-                        <p itemprop="description">Description du projet 2</p>
-                    </article>
-                    <article class="project"
-                    <article class="project" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
-                        <a href="#"><img src="project3.jpg" alt="Project 3" itemprop="image"></a>
-                        <h3 itemprop="name">Project 3</h3>
-                        <p itemprop="description">Description du projet 3</p>
-                    </article>
-                </div>
-            </div>    
-        </section>    
-    </main>    
-    <footer id="contact">
-        <div class="container">
-            <h2>Contactez-moi</h2>
-            <!-- Ajout d'un attribut action pour le formulaire de contact -->
-            <form action="contact.php" method="post">
-                <!-- Ajout d'un attribut name pour chaque champ du formulaire -->
-                <label for="name">Nom :</label>
-                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+  /* h1:hover {
+    transform: scale(1.4);
+  } */
+  
+  h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 3rem;
+    max-width: var(--max-width);
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  p {
+    max-width: var(--max-width);
+    /* Correction de la longueur des lignes de texte */
+    line-height: 1.5;
+  }
+  
+  /* Navigation styles */
+  nav {
+    text-align: center;
+  }
+  
+  nav ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    /* Ajout d'une animation sur le menu */
+    animation: slide-in .5s ease-in-out forwards;
+    opacity: 0;
+  }
 
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" placeholder="Votre email" required>
+  @keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 1rem;
+  }
+  
+  nav a {
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+  }
+  
+  nav a:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+  }
+  
+  /* Header styles */
+  header {
+    background-color: var(--background-color);
+    padding: .5rem;
+}
+  
+/* Logo styles */
+.logo {
+  display: inline-block;
+  vertical-align: middle;
+}
 
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+.logo img {
+  width: 100px;
+  height: auto;
+}
 
-                <button type="submit">Envoyer</button>
+/* Button styles */
+.button {
+  display: inline-block;
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: .5rem;
+  background-color: var(--main-color);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
 
-            </form>    
-        </div>    
-    </footer>    
-</body>
+.button:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.1);
+}
 
-</html>
+/* Container styles */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Grid styles */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2rem;
+}
+
+ /* Project styles */
+ .project {
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px; 
+  }
+
+  .project img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* Utilisation d'une variable pour le facteur de zoom */
+    --zoom-factor: 1.2;
+    transform: scale(1);
+    transition: transform .5s ease-in-out;
+  }
+
+  .project:hover img {
+    transform: scale(var(--zoom-factor));
+  }
+
+  .project h3, .project p {
+      position : absolute; 
+      left :0; 
+      right :0; 
+      padding :.5rem; 
+      font-size :1.5rem; 
+      text-align : center; 
+      /* Utilisation d'une variable pour la hauteur des éléments */
+      --element-height: 10%;
+      height : var(--element-height); 
+      
+}
+
+.project h3 {
+      bottom :0; 
+      background-color : rgba(0,0,0,.8); 
+      color : white; 
+}
+
+.project p {
+bottom : var(--element-height); 
+background-color : rgba(255,255,255,.8); 
+color : black; 
+font-size :1.2rem; 
+
+}
+
+/* Footer styles */
+footer {
+background-color : var(--main-color); 
+color : white; 
+padding-top :.5rem; 
+
+}
+
+footer h2 {
+margin-bottom :.5rem; 
+text-align : center; 
+font-size :2.5rem; 
+font-weight : bold; 
+text-transform : uppercase; 
+letter-spacing :.2rem; 
+text-shadow :-1px -1px #000, -2px -2px #000, -3px -3px #000; 
+animation : glow-text .5s ease-in-out infinite alternate; 
+transition : all .3s ease-in-out; 
+
+}
+
+@keyframes glow-text {
+from {text-shadow :-1px -1px #000, -2px -2px #000, -3px -3px #000;}
+to {text-shadow :-1px -1px #fff, -2px -2px #fff, -3px -3px #fff;}
+}
+
+footer h2:hover {
+transform : scale(1.1); 
+
+}
+
+footer form {
+display : flex; 
+flex-direction : column; 
+align-items : center; 
+
+}
+
+footer label {
+display : block; 
+margin-bottom :.5rem; 
+font-size :1.2rem; 
+font-weight : bold;
+
+}
+
+footer input, footer textarea {
+width :80%; 
+padding :.5rem; 
+border : none; 
+border-radius :.5rem; 
+background-color : white; 
+font-size :1.2rem; 
+margin-bottom :1rem;
+
+}
+
+footer button {
+width :20%; 
+padding :.5rem; 
+border : none; 
+border-radius :.5rem; 
+background-color : var(--accent-color); 
+color : white; 
+font-size :1.2rem; 
+font-weight : bold; 
+cursor : pointer; 
+
+}
+
+footer button:hover {
+transform: scale(1.1); 
+
+}
