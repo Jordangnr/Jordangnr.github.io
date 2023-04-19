@@ -1,127 +1,93 @@
-/* Définition des variables */
-:root {
-    --main-color: blue;
-    --background-color: #f7f7f7;
-    --max-width: 131rem;
-  }
-  
-  /* Font styles */
-  body {
-    font-family: 'Helvetica Neue', sans-serif;
-    margin: 0;
-  }
-  
-  h1, h2 {
-    font-weight: 400;
-    font-size: 3rem;
-    max-width: var(--max-width);
-  }
-  
-  h2 {
-    margin-top: 0;
-  }
-  
-  p {
-    max-width: var(--max-width);
-  }
-  
-  /* Navigation styles */
-  nav {
-    text-align: center;
-  }
-  
-  nav ul {
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    display: inline-block;
-    margin-right: 1rem;
-  }
-  
-  nav a {
-    color: var(--main-color);
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: color 0.2s ease-in-out;
-  }
-  
-  nav a:hover {
-    color: #666;
-  }
-  
-  /* Header styles */
-  header {
-    background-color: var(--background-color);
-    padding: 1rem;
-    max-width: var(--max-width);
-    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
-  }
-  
-  /* Main content styles */
-  main {
-    padding: 2rem;
-    text-align: center;
-    max-width: var(--max-width);
-  }
-  
-  /* Footer styles */
-  footer {
-    background-color: var(--background-color);
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.8rem;
-    margin-top: 2rem;
-    box-shadow: 0px -3px 10px rgba(0,0,0,0.1);
-  }
-  
-  /* Animations */
-  h1, h2 {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn .5s ease-in-out forwards;
-  }
-  
-  @keyframes fadeIn {
-      from {
-          opacity: .5s ease-in-out forwards
-      }
-      to {
-          opacity: .5s ease-in-out forwards
-      }
-  }
-  
-  /* Grid layout */
-  .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, .5s ease-in-out forwards));
-      grid-gap: .5s ease-in-out forwards
-      margin-top:.5s ease-in-out forwards
-      max-width:.5s ease-in-out forwards
-  }
-  
-  /* Project styles */
-  article {
-      box-shadow:.5s ease-in-out forwards
-      padding:.5s ease-in-out forwards
-  }
-  
-  article img {
-      max-width:.5s ease-in-out forwards
-      height:.5s ease-in-out forwards
-      display:.5s ease-in-out forwards
-      margin:.5s ease-in-out forwards
-  }
-  
-  article h3 {
-      margin-top:.5s ease-in-out forwards
-      font-size:.5s ease-in-out forwards
-  }
-  
-  article p {
-      margin-top:.5s ease-in-out forwards
-      
-  }
+<!DOCTYPE html>
+<html lang="fr">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Balises meta pour le référencement -->
+    <meta name="title" content="Portfolio de Jordan GINER">
+    <meta name="description" content="Découvrez le portfolio de Jordan GINER, un consultant en innovation, combinant business, design et ingénierie mécanique pour développer des stratégies de marques et d'innovations impactantes.">
+    <meta name="keywords" content="portfolio, innovation, design, ingénierie, business, IA, blockchain, data">
+    <!-- Balise meta pour la sécurité -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fonts.googleapis.com; style-src 'self' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com;">
+    <title>Portfolio de Jordan GINER</title>
+    <!-- Importation de la police Poppins depuis Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <!-- Importation du fichier style.css avec un numéro de version pour éviter le cache -->
+    <link rel="stylesheet" href="style.css?v=2023-04-19">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo de Jordan GINER">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <div class="container">
+                <h1>Jordan GINER</h1>
+                <h2>Designer Innovation, Stratégie | Ingénieur Mécanique, Ergonomie & Design Industriel</h2>
+                <p>Bonjour, je m'appelle Jordan GINER et je suis un consultant en innovation, combinant business, design et ingénierie mécanique pour développer des stratégies de marques et d'innovations impactantes basées sur une vision claire des enjeux de terrain. Passionné par le monde digital, j'explore et développe des projets innovants dans les domaines de l'IA, la blockchain (DeFi) et la data.</p>
+                <!-- Ajout d'un attribut download pour faciliter le téléchargement du CV -->
+                <a href="cv.pdf" class="button" download>Télécharger mon CV</a>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="container">
+                <h2>Projets</h2>
+                <!-- Ajout de microdonnées schema.org pour enrichir les pages -->
+                <div class="grid-container" itemscope itemtype="https://schema.org/ItemList">
+                    <!-- Ajout d'un attribut itemprop pour chaque projet -->
+                    <article class="project" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
+                        <!-- Ajout d'un attribut itemprop pour le titre et l'image du projet -->
+                        <a href="#"><img src="project1.jpg" alt="Project 1" itemprop="image"></a>
+                        <h3 itemprop="name">Project 1</h3>
+                        <!-- Ajout d'un attribut itemprop pour la description du projet -->
+                        <p itemprop="description">Description du projet 1</p>
+                    </article>
+                    <article class="project" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
+                        <a href="#"><img src="project2.jpg" alt="Project 2" itemprop="image"></a>
+                        <h3 itemprop="name">Project 2</h3>
+                        <p itemprop="description">Description du projet 2</p>
+                    </article>
+                    <article class="project"
+                    <article class="project" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork">
+                        <a href="#"><img src="project3.jpg" alt="Project 3" itemprop="image"></a>
+                        <h3 itemprop="name">Project 3</h3>
+                        <p itemprop="description">Description du projet 3</p>
+                    </article>
+                </div>
+            </div>    
+        </section>    
+    </main>    
+    <footer id="contact">
+        <div class="container">
+            <h2>Contactez-moi</h2>
+            <!-- Ajout d'un attribut action pour le formulaire de contact -->
+            <form action="contact.php" method="post">
+                <!-- Ajout d'un attribut name pour chaque champ du formulaire -->
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+
+            </form>    
+        </div>    
+    </footer>    
+</body>
+
+</html>
