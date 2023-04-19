@@ -4,9 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Balises meta pour le référencement -->
+    <meta name="title" content="Portfolio de Jordan GINER">
+    <meta name="description" content="Découvrez le portfolio de Jordan GINER, un consultant en innovation, combinant business, design et ingénierie mécanique pour développer des stratégies de marques et d'innovations impactantes.">
+    <meta name="keywords" content="portfolio, innovation, design, ingénierie, business, IA, blockchain, data">
+    <!-- Balise meta pour la sécurité -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://fonts.googleapis.com; style-src 'self' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com;">
     <title>Portfolio de Jordan GINER</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
-    <link rel="stylesheet" href="style.css">
+    <!-- Importation de la police Poppins depuis Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
+    <!-- Importation du fichier style.css avec un numéro de version pour éviter le cache -->
+    <link rel="stylesheet" href="style.css?v=2023-04-19">
 </head>
 
 <body>
@@ -28,49 +36,67 @@
                 <h1>Jordan GINER</h1>
                 <h2>Designer Innovation, Stratégie | Ingénieur Mécanique, Ergonomie & Design Industriel</h2>
                 <p>Bonjour, je m'appelle Jordan GINER et je suis un consultant en innovation, combinant business, design et ingénierie mécanique pour développer des stratégies de marques et d'innovations impactantes basées sur une vision claire des enjeux de terrain. Passionné par le monde digital, j'explore et développe des projets innovants dans les domaines de l'IA, la blockchain (DeFi) et la data.</p>
-                <a href="cv.pdf" class="button">Télécharger mon CV</a>
+                <!-- Ajout d'un attribut download pour faciliter le téléchargement du CV -->
+                <a href="cv.pdf" class="button" download>Télécharger mon CV</a>
             </div>
         </section>
-        <h2>Projets</h2>
-    <section class="grid-container">
-        <article>
-            <a href="#"><img src="project1.jpg" alt="Project 1"></a>
-            <h3>Project 1</h3>
-            <p>Description du projet 1</p>
-        </article>
-        <article>
-            <a href="#"><img src="project2.jpg" alt="Project 2"></a>
-            <h3>Project 2</h3>
-            <p>Description du projet 2</p>
-        </article>
-        <article>
-            <a href="#"><img src="project3.jpg" alt="Project 3"></a>
-            <h3>Project 3</h3>
-            <p>Description du projet 3</p>
-        </article>
-        <article>
-            <a href="#"><img src="project4.jpg" alt="Project 4"></a>
-            <h3>Project 4</h3>
-            <p>Description du projet 4</p>
-        </article>
-    </section>
-        <section id="contact">
+        <section id="projects">
             <div class="container">
-                <h3>Me contacter</h3>
-                <form action="#" method="post">
-                    <!-- Ajouter ici les champs du formulaire avec un nom, un email, un sujet et un message -->
-                    <input type="submit" value="Envoyer" class="button">
-                </form>
-            </div>
-        </section>
-    </main>
-    <footer>
+                <h2>Projets</h2>
+                <!-- Ajout de microdonnées schema.org pour enrichir les pages -->
+                <div class="grid-container" itemscope itemtype="https://schema.org/ItemList">
+                    <!-- Modification de la structure des projets -->
+                    <!-- Ajout d'un attribut itemprop pour chaque projet -->
+                    <!-- Ajout d'un attribut style pour définir l'image du projet comme fond -->
+                    <!-- Suppression de l'image du projet dans le code HTML -->
+                    <!-- Ajout d'un div pour englober le titre et la description du projet -->
+                    <article class="project" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork" style="background-image: url('project1.jpg');">
+                        <!-- Ajout d'un attribut itemprop pour le titre et l'image du projet -->
+                        <!--<a href="#"><img src="project1.jpg" alt="Project 1" itemprop="image"></a>-->
+                        <div class="project-content">
+                            <h3 itemprop="name">Project 1</h3>
+                            <!-- Ajout d'un attribut itemprop pour la description du projet -->
+                            <p itemprop="description">Description du projet 1</p>
+                        </div>    
+                    </article>
+                    <article class="project" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork" style="background-image: url('project2.jpg');">
+                        <!--<a href="#"><img src="project2.jpg" alt="Project 2" itemprop="image"></a>-->
+                        <div class="project-content">
+                            <h3 itemprop="name">Project 2</h3>
+                            <p itemprop="description">Description du projet 2</p>
+                        </div>    
+                    </article>
+                    <article class="project" itemprop="itemListElement" itemscope itemtype="https://schema.org/CreativeWork" style="background-image: url('project3.jpg');">
+                        <!--<a href="#"><img src="project3.jpg" alt="Project 3" itemprop="image"></a>-->
+                        <div class="project-content">
+                            <h3 itemprop="name">Project 3</h3>
+                            <p itemprop="description">Description du projet 3</p>
+                        </div>    
+                    </article>
+                </div>
+            </div>    
+        </section>    
+    </main>    
+    <footer id="contact">
         <div class="container">
-            <p>© 2023 Jordan GINER. Tous droits réservés.</p>
-            <ul class="social">
-                <!-- Ajouter ici les liens vers les réseaux sociaux avec des icônes -->
-            </ul>
-        </div>
-    </footer>
+            <h2>Contactez-moi</h2>
+            <!-- Ajout d'un attribut action pour le formulaire de contact -->
+            <form action="contact.php" method="post">
+                <!-- Ajout d'un attribut name pour chaque champ du formulaire -->
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+
+                <button type="submit">Envoyer</button>
+
+            </form>    
+        </div>    
+    </footer>    
 </body>
+
 </html>
